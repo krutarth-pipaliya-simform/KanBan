@@ -1,0 +1,28 @@
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.create-new-button{
+    background-color: blue;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+}
+
+.task-list-container-wrapper{
+    display: flex;
+    gap: 2rem;
+    background-color: #F9B2D7;
+    flex: 1;
+    padding: 2rem;
+    overflow-x: auto;
+}
