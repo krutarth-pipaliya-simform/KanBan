@@ -5,7 +5,11 @@ export default function dragOverEvent() {
         container.addEventListener("dragover", (e) => {
             let draggingEle = document.querySelector(".dragging");
             container.lastElementChild.appendChild(draggingEle);
-            console.log(container);
+            let middleOfWidth =
+                draggingEle.offsetLeft + draggingEle.offsetWidth / 2;
+            let middleOfHeight =
+                draggingEle.offsetTop + draggingEle.offsetHeight / 2;
+            console.log(draggingEle);
         });
     });
 }
