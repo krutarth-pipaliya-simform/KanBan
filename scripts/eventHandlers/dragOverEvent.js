@@ -1,6 +1,7 @@
-import { getMiddleHeight, getMiddleWidth } from "../services/getMiddle.js";
+import { getMiddleHeight} from "../services/getMiddle.js";
 import getNearestIndex from "../services/getNearestIndex.js";
 import { getMouseOffset } from "../services/mouseOffest.js";
+import syncListWithLocalstorage from "../services/syncListWithLocalstorage.js";
 
 export default function dragOverEvent() {
     const wrapper = document.querySelector(".task-list-container-wrapper");
@@ -29,5 +30,7 @@ export default function dragOverEvent() {
         } else {
             container.lastElementChild.appendChild(draggingEle);
         }
+
+        syncListWithLocalstorage();
     });
 }
