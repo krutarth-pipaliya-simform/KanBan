@@ -1,44 +1,34 @@
-import { getMiddleHeight } from "../services/getMiddle.js";
+import { getMiddleHeight, getMiddleWidth } from "../services/getMiddle.js";
+import getNearestIndex from "../services/getNearestIndex.js";
 import { getMouseOffset } from "../services/mouseOffest.js";
 
 export default function dragOverEvent() {
     const containers = document.querySelectorAll(".task-list-container");
+    const wrapper = document.querySelector(".task-list-container-wrapper");
 
-    containers.forEach((container) => {
-        container.addEventListener("dragover", (e) => {
-            e.preventDefault();
+    wrapper.addEventListener("dragover", (e) => {
+        e.preventDefault();
 
-            const draggingEle = document.querySelector(".dragging");
+        const mouseOffest = getMouseOffset();
+        const mouseX = e.clientX + mouseOffest.x;
+        const mouseY = e.clientY + mouseOffest.y;
 
-            const children = [...container.lastElementChild.children];
-            let mouseOffest = getMouseOffset();
-            const mouseY = e.pageY + mouseOffest.y;
-            const nearestIndex = children.reduce((acc, item, index) => {
-                if (item.classList.contains("dragging")) return acc;
-                if (acc === -1) return index;
+        const containers = [...wrapper.children];
+        const container = containers[getNearestIndex(mouseX, containers, true)];
+        const children = [...container.lastElementChild.children];
 
-                const accMid = getMiddleHeight(children[acc]);
-                const curMid = getMiddleHeight(item);
+        const draggingEle = document.querySelector(".dragging");
+        const nearestIndex = getNearestIndex(mouseY, children, false);
 
-                if (Math.abs(mouseY - curMid) < Math.abs(mouseY - accMid)) {
-                    return index;
-                }
-
-                return acc;
-            }, -1);
-
-            if (nearestIndex !== -1) {
-                let nearestMiddleHeight = getMiddleHeight(
-                    children[nearestIndex],
-                );
-                if (nearestMiddleHeight > mouseY) {
-                    children[nearestIndex].before(draggingEle);
-                } else {
-                    children[nearestIndex].after(draggingEle);
-                }
+        if (nearestIndex !== -1) {
+            let nearestMiddleHeight = getMiddleHeight(children[nearestIndex]);
+            if (nearestMiddleHeight > mouseY) {
+                children[nearestIndex].before(draggingEle);
             } else {
-                container.lastElementChild.appendChild(draggingEle);
+                children[nearestIndex].after(draggingEle);
             }
-        });
+        } else {
+            container.lastElementChild.appendChild(draggingEle);
+        }
     });
 }
