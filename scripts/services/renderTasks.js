@@ -5,6 +5,13 @@ import getTasks from "./getTasks.js";
 export default function renderTasks() {
     let tasks = getTasks();
 
+    // flush older elements
+    document.querySelector("#todo-list").innerHTML = "";
+    document.querySelector("#progress-list").innerHTML = "";
+    document.querySelector("#validation-list").innerHTML = "";
+    document.querySelector("#completed-list").innerHTML = "";
+
+    // add new elements
     for (let i = 0; i < tasks.todo.length; i++) {
         console.log(tasks);
         let task = createTaskElement(tasks.todo[i]);
