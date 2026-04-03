@@ -1,7 +1,7 @@
-import dragEvent from "./dragEvent.js";
+import createButton from "./createButton.js";
 import dragOverEvent from "./dragOverEvent.js";
 
 export default function startEventHandlers() {
-    dragEvent();
     dragOverEvent();
+    createButton();
 }

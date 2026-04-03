@@ -15,7 +15,11 @@
     gap: 1rem;
     max-height: 100%;
     overflow-y: auto;
-    list-style: none;
+    list-style-type: none;
+}
+
+.task-list-item{
+    padding: 2rem;
 }
 
 .task {

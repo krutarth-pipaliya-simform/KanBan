@@ -3,7 +3,6 @@ import getNearestIndex from "../services/getNearestIndex.js";
 import { getMouseOffset } from "../services/mouseOffest.js";
 
 export default function dragOverEvent() {
-    const containers = document.querySelectorAll(".task-list-container");
     const wrapper = document.querySelector(".task-list-container-wrapper");
 
     wrapper.addEventListener("dragover", (e) => {
