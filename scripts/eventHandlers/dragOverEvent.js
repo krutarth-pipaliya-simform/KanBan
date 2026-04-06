@@ -11,6 +11,7 @@ export default function dragOverEvent() {
     const wrapper = document.querySelector(".task-list-container-wrapper");
 
     wrapper.addEventListener("dragover", (e) => {
+        if (!document.querySelector(".dragging")) return;
         e.preventDefault();
 
         const mouseOffest = getMouseOffset();
@@ -41,6 +42,7 @@ export default function dragOverEvent() {
     });
 
     wrapper.addEventListener("touchmove", (e) => {
+        if (!document.querySelector(".dragging")) return;
         e.preventDefault();
 
         const mouseOffest = getMouseOffset();
