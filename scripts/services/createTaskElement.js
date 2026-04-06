@@ -6,7 +6,7 @@ export default function createTaskElement(task) {
     let div = document.createElement("div");
     div.classList.add("task");
 
-    let title = document.createElement("div");
+    let title = document.createElement("h3");
     title.classList.add("task-title");
     title.textContent = task.title;
 
