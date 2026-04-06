@@ -5,12 +5,13 @@ import {
 
 export function editTask() {
     let wrapper = document.querySelector(".task-list-container-wrapper");
-    wrapper.addEventListener("click", (e) => {
+    wrapper.addEventListener("dblclick", (e) => {
         if (
             e.target.classList.contains("task-title") ||
             e.target.classList.contains("task-description")
         ) {
             addEditableClass(e.target);
+            e.target.focus();
             e.target.addEventListener("blur", removeEditableClass, {
                 once: true,
             });
