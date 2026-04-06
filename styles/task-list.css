@@ -3,10 +3,12 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: #cfecf3;
+    background-color: #222831;
     min-width: 20rem;
     padding: 1rem;
     overflow-y: hidden;
+    border-radius: 0.8rem;
+    border: 2px solid #ffffff2f;
 }
 
 .task-list {
@@ -16,12 +18,35 @@
     max-height: 100%;
     overflow-y: auto;
     list-style-type: none;
+    padding: 0.2rem;
 }
 
 .task {
-    border: 1px solid black;
+    border: 1px solid #444;
+    border-radius: 0.4rem;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    background-color: #101010;
+}
+
+.todo {
+    background-color: #161e2b;
+    border-color: #1f293a;
+}
+
+.progress {
+    background-color: #2a1429;
+    border-color: #4d284b;
+}
+
+.validation {
+    background-color: #221f2e;
+    border-color: #403b53;
+}
+
+.completed {
+    background-color: #1e2d2f;
+    border-color: #32484b;
 }

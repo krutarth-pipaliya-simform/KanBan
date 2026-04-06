@@ -1,3 +1,4 @@
+import { addContainerHighlight, removeContainerHighlight } from "../services/containerHighlight.js";
 import { getMiddleHeight} from "../services/getMiddle.js";
 import getNearestIndex from "../services/getNearestIndex.js";
 import { getMouseOffset } from "../services/mouseOffest.js";
@@ -27,6 +28,8 @@ export default function dragOverEvent() {
             } else {
                 children[nearestIndex].after(draggingEle);
             }
+            removeContainerHighlight();
+            addContainerHighlight(container);
         } else {
             container.lastElementChild.appendChild(draggingEle);
         }

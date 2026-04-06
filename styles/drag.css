@@ -1,3 +1,8 @@
-.dragging{
+.dragging > .task {
+    outline: 2px solid white;
     opacity: 0.5;
+}
+
+.highlighted {
+    outline: 2px solid white;
 }
