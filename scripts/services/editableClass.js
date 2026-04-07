@@ -2,7 +2,6 @@ import syncListWithLocalstorage from "./syncListWithLocalstorage.js";
 
 export function addEditableClass(elem) {
     removeEditableClass();
-    console.log(elem);
     elem.classList.add("editable");
     elem.setAttribute("contenteditable", "true");
 }

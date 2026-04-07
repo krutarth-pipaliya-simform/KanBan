@@ -50,3 +50,30 @@
     background-color: #1e2d2f;
     border-color: #32484b;
 }
+
+.delete-button {
+    display: none;
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    background-color: transparent;
+    border: none;
+}
+
+.delete-button > svg {
+    color: #f35f5f;
+}
+
+.delete-button > svg:hover {
+    border-radius: 0.2rem;
+    box-shadow: 0 0 10px #f35f5f;
+}
+
+.task:hover {
+    box-shadow: 0 0 5px white;
+    position: relative;
+
+    .delete-button {
+        display: block;
+    }
+}

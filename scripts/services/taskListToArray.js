@@ -4,7 +4,7 @@ export default function taskListToArray(tasks) {
         return {
             index,
             title: item.firstElementChild.firstElementChild.textContent,
-            description: item.firstElementChild.lastElementChild.textContent,
+            description: item.firstElementChild.children[1].textContent,
         };
     });
 }
