@@ -5,4 +5,19 @@
 
 .highlighted {
     outline: 2px solid white;
+    animation-name: myAnimation;
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+}
+
+@keyframes myAnimation {
+    0% {
+        outline-color: rgba(255, 255, 255, 0);
+    }
+    50% {
+        outline-color: rgb(255, 255, 255);
+    }
+    100% {
+        outline-color: rgba(255, 255, 255, 0);
+    }
 }
