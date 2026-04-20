@@ -1,28 +1,47 @@
-body{
+body {
     height: 100vh;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    font-family: "Inter", sans-serif;
+    background-color: #101010;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     padding: 1rem;
+
+    border-bottom: 1px solid #444;
+    color: #eeeeee;
 }
 
-.create-new-button{
-    background-color: blue;
-    color: white;
+.create-new-button {
+    background-color: #76abae;
+    color: black;
+    font-weight: 600;
     padding: 0.5rem 1rem;
     border-radius: 0.2rem;
+    border: none;
+
+    &:hover {
+        outline: 1px solid #eeeeee;
+        color: #eeeeee;
+    }
 }
 
-.task-list-container-wrapper{
+.task-list-container-wrapper {
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     gap: 2rem;
-    background-color: #F9B2D7;
     flex: 1;
     padding: 2rem;
     overflow-x: auto;
+    max-width: 100%;
+    color: #eeeeee;
+
+    h2 {
+        font-weight: 800;
+    }
 }
