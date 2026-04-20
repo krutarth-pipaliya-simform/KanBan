@@ -1,7 +1,7 @@
 import addDeleteEvent from "./addDeleteEvent.js";
 import addDragEvent from "./addDragEvents.js";
 import createTaskElement from "./createTaskElement.js";
-import getTasks from "./getTasks.js";
+import { getTasks } from "./getSetTasks.js";
 
 export default function renderTasks() {
     let tasks = getTasks();

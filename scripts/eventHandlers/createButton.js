@@ -1,6 +1,5 @@
-import getTasks from "../services/getTasks.js";
+import { getTasks, setTasks } from "../services/getSetTasks.js";
 import renderTasks from "../services/renderTasks.js";
-import setTasks from "../services/setTasks.js";
 
 export default function createButton() {
     let button = document.querySelector(".create-new-button");

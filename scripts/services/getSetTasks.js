@@ -1,4 +1,4 @@
-export default function getTasks() {
+export function getTasks() {
     let tasks =localStorage.getItem('tasks');
     if (!tasks)
         return {
@@ -11,3 +11,6 @@ export default function getTasks() {
     return tasks;
 }
 
+export function setTasks(tasks) {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+}

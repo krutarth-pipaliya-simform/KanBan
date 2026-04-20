@@ -1,4 +1,5 @@
-import setTasks from "./setTasks.js";
+
+import { setTasks } from "./getSetTasks.js";
 import taskListToArray from "./taskListToArray.js";
 
 export default function syncListWithLocalstorage() {
